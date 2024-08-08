@@ -22,18 +22,14 @@ export default function page() {
    }, [])
 
    return (
-      <main className='overflow-hidden'>
-         <div className='h-[80dvh]' />
-         <div ref={container}>
-            <Slide bg='#3b82f6' left={'-40%'} direction='left' progress={scrollYProgress} />
-            <Slide bg='#60a5fa' left={'-75%'} direction='right' progress={scrollYProgress} />
-         </div>
-         <div className='h-[80dvh]' />
-      </main>
+      <div ref={container}>
+         <Slide bg='#3b82f6' left={'-40%'} direction='left' progress={scrollYProgress} />
+         <Slide bg='#60a5fa' left={'-75%'} direction='right' progress={scrollYProgress} />
+      </div>
    )
 }
 
-const Slide = props => {
+function Slide(props) {
    const direction = props.direction == 'left' ? -1 : 1
    const translateX = useTransform(props.progress, [0, 1], [220 * direction, -220 * direction])
 
@@ -46,7 +42,7 @@ const Slide = props => {
    )
 }
 
-const Phrase = ({ bg }) => {
+function Phrase({ bg }) {
    return (
       <div className='px-5 flex gap-5 items-center'>
          <p className='text-blue-500 font-medium text-[7.5vw]'>

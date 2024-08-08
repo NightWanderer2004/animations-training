@@ -13,7 +13,8 @@
     "lenis": "^1.1.9",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.77.8"
   },
   "devDependencies": {
     "postcss": "^8",
