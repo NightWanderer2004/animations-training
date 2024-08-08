@@ -59,23 +59,25 @@ function Card({ title, description, src, color, i, progress, range, targetScale 
    const container = useRef(null)
    const { scrollYProgress } = useScroll({
       target: container,
-      offset: ['end', isLast ? 'center' : 'start'],
+      offset: ['1.2 end', isLast ? 'center' : 'start'],
    })
 
    const scale = useTransform(progress, range, [1, targetScale])
-   const rotationX = useTransform(scrollYProgress, [0, 1], [-75, isLast ? 0 : 90])
-   const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0])
+   const rotationX = useTransform(scrollYProgress, [0, 1], [-80, isLast ? 0 : 90])
+   const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0.5])
+   const filter = useTransform(scrollYProgress, [0, 0.3], ['brightness(0.75)', 'brightness(1)'])
 
    return (
       <div ref={container} className={`h-[28vh] text-white flex justify-center items-center sticky top-0 drop-shadow-md ${yeseva_one.className}`}>
          <motion.div
-            className='border-4 border-black/5 flex flex-col md:h-[600px] w-screen p-8 md:p-10 relative rounded-3xl origin-bottom'
+            className='border-4 border-black/5 shadow-inner shadow-white/20 flex flex-col md:h-[600px] w-screen p-8 md:p-10 relative rounded-3xl origin-bottom'
             style={{
                backgroundColor: color,
                top: '-5vh',
                scale,
                rotateX: rotationX,
                opacity: isLast ? 1 : opacity,
+               filter,
             }}
          >
             <h2 className='mb-5 text-5xl'>{title}</h2>
