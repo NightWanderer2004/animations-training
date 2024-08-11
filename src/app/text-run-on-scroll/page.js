@@ -1,20 +1,8 @@
 'use client'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import Lenis from 'lenis'
+import { useRef } from 'react'
 
 export default function page() {
-   useEffect(() => {
-      const lenis = new Lenis()
-
-      function raf(time) {
-         lenis.raf(time)
-         requestAnimationFrame(raf)
-      }
-
-      requestAnimationFrame(raf)
-   }, [])
-
    return <Paragraph paragraph='Приветсвую на пути становления сенсеем анимаций в вебе' />
 }
 

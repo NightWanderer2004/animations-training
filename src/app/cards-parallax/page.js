@@ -1,7 +1,6 @@
 'use client'
-import Lenis from 'lenis'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useTransform, useScroll, motion } from 'framer-motion'
 import { yeseva_one } from '../fonts'
 
@@ -34,16 +33,6 @@ export default function page() {
       offset: ['start center', 'end'],
    })
 
-   useEffect(() => {
-      const lenis = new Lenis()
-
-      function raf(time) {
-         lenis.raf(time)
-         requestAnimationFrame(raf)
-      }
-
-      requestAnimationFrame(raf)
-   }, [])
    return (
       <div ref={container}>
          {projects.map((project, i) => {

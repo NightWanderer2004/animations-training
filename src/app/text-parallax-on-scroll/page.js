@@ -1,7 +1,6 @@
 'use client'
 import { useScroll, useTransform, motion } from 'framer-motion'
-import Lenis from 'lenis'
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 export default function page() {
    const container = useRef()
@@ -9,17 +8,6 @@ export default function page() {
       target: container,
       offset: ['start end', 'end start'],
    })
-
-   useEffect(() => {
-      const lenis = new Lenis()
-
-      function raf(time) {
-         lenis.raf(time)
-         requestAnimationFrame(raf)
-      }
-
-      requestAnimationFrame(raf)
-   }, [])
 
    return (
       <div ref={container}>

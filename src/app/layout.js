@@ -1,10 +1,11 @@
 'use client'
 import './globals.css'
 import { e_ukraine } from './fonts'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import Lenis from 'lenis'
 
-const links = ['/text-parallax-on-scroll', '/text-run-on-scroll', '/cards-parallax']
+const links = ['/text-parallax-on-scroll', '/text-run-on-scroll', '/cards-parallax', '/magnetic-btns']
 
 export default function RootLayout({ children }) {
    const router = useRouter()
@@ -17,6 +18,16 @@ export default function RootLayout({ children }) {
       router.push(selectedValue)
       window.scrollTo({ top: 0 })
    }
+   useEffect(() => {
+      const lenis = new Lenis()
+
+      function raf(time) {
+         lenis.raf(time)
+         requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+   }, [])
 
    return (
       <html lang='en'>
