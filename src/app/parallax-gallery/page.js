@@ -36,7 +36,7 @@ export default function page() {
       >
          <motion.div
             className={s.wrapper}
-            style={{ top: '10px', left: isMobile ? 0 : '30%', y: moveSmY, x: isMobile ? moveRightX : moveLeftX, width: isMobile ? 'auto' : 580 }}
+            style={{ top: '10px', left: isMobile ? 0 : '30%', y: moveSmY, x: isMobile ? moveRightX : 0, width: isMobile ? 'auto' : 580 }}
          >
             <Image src={B1} placeholder='blur' width={560} height={800} />
             <span>Modern Architectural Facade</span>
