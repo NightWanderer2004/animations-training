@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Lenis from 'lenis'
 
-const links = ['/text-parallax-on-scroll', '/text-run-on-scroll', '/cards-parallax', '/magnetic-btns']
+const links = ['/text-parallax-on-scroll', '/text-run-on-scroll', '/cards-parallax', '/magnetic-btns', '/parallax-gallery']
 
 export default function RootLayout({ children }) {
    const router = useRouter()

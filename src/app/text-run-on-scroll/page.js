@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
 export default function page() {
-   return <Paragraph paragraph='Приветсвую на пути становления сенсеем анимаций в вебе' />
+   return <Paragraph paragraph='Welcome to the journey of becoming an web animation sensei' />
 }
 
 function Paragraph({ paragraph }) {
@@ -31,7 +31,7 @@ function Paragraph({ paragraph }) {
 
 function Word({ children, progress, range }) {
    const opacity = useTransform(progress, range, [0, 1])
-   const italicWords = ['сенсеем', 'вебе', 'становления']
+   const italicWords = ['becoming', 'sensei']
    return (
       <span className='relative mr-[2.045vw] leading-snug'>
          <span
