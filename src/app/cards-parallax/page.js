@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { useTransform, useScroll, motion } from 'framer-motion'
-import { yeseva_one } from '../fonts'
+import { e_ukraine, yeseva_one } from '../fonts'
 
 const projects = [
    {
@@ -57,7 +57,10 @@ function Card({ title, description, src, color, i, progress, range, targetScale 
    const filter = useTransform(scrollYProgress, [0, 0.3], ['brightness(0.75)', 'brightness(1)'])
 
    return (
-      <div ref={container} className={`h-[28vh] text-white flex justify-center items-center sticky top-0 drop-shadow-md ${yeseva_one.className}`}>
+      <div
+         ref={container}
+         className={`h-[28vh] text-white flex justify-center items-center sticky top-0 drop-shadow-[0_4px_6px_rgba(0,0,0,0.10)] ${yeseva_one.className}`}
+      >
          <motion.div
             className='border-4 border-black/5 shadow-inner shadow-white/20 flex flex-col md:h-[600px] w-screen p-8 md:p-10 relative rounded-3xl origin-bottom'
             style={{
@@ -72,7 +75,7 @@ function Card({ title, description, src, color, i, progress, range, targetScale 
             <h2 className='mb-5 text-5xl'>{title}</h2>
             <div className='flex flex-col md:flex-row h-full md:mb-8 gap-10'>
                <div className='md:w-1/2 relative top-[2%] md:top-[10%]'>
-                  <p className='text-2xl leading-relaxed tracking-wide first-letter:text-4xl'>{description}</p>
+                  <p className={`text-2xl leading-relaxed first-letter:text-4xl ${e_ukraine.className}`}>{description}</p>
                </div>
                <div className='relative w-full md:w-[60%] h-[200px] md:h-full rounded-2xl overflow-hidden'>
                   <motion.div className='w-full h-full'>
