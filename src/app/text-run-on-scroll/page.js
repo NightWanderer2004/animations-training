@@ -17,8 +17,9 @@ function Paragraph({ paragraph }) {
    return (
       <p ref={container} className='flex text-[6.5vw] text-stone-900 p-10 flex-wrap'>
          {words.map((word, i) => {
+            const elemPos = i === words.length - 1 ? 1 : 1.5
             const start = i / words.length
-            const end = start + 1 / words.length
+            const end = start + elemPos / words.length
             return (
                <Word key={i} progress={scrollYProgress} range={[start, end]}>
                   {word}
@@ -32,6 +33,7 @@ function Paragraph({ paragraph }) {
 function Word({ children, progress, range }) {
    const opacity = useTransform(progress, range, [0, 1])
    const italicWords = ['becoming', 'sensei']
+
    return (
       <span className='relative mr-[2.045vw] leading-snug'>
          <span
@@ -45,7 +47,7 @@ function Word({ children, progress, range }) {
          <motion.span
             style={{
                color: italicWords.includes(children) ? '#3b82f6' : '',
-               opacity: opacity,
+               opacity,
                fontStyle: italicWords.includes(children) ? 'italic' : 'normal',
             }}
          >
