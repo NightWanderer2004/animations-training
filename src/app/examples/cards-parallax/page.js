@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { useTransform, useScroll, motion } from 'framer-motion'
-import { e_ukraine, yeseva_one } from '../fonts'
+import { e_ukraine, yeseva_one } from '../../fonts'
 
 const projects = [
    {
