@@ -31,11 +31,9 @@ export default function ExamplesLayout({ children }) {
                ))}
             </select>
          </nav>
-         <main>
-            <div className='h-[85dvh]' />
-            {children}
-            <div className='h-[85dvh]' />
-         </main>
+         <div className='h-[85dvh]' />
+         {children}
+         <div className='h-[85dvh]' />
       </>
    )
 }

@@ -20,18 +20,19 @@ export default function Home() {
 function Heading({ text, progress }) {
    const words = text.split(' ')
 
+   const y = useTransform(progress, [0, 1], [0, 70])
    const heightSkewSm = useTransform(progress, [0, 1], ['40vh', '80vh'])
    const heightSkewMd = useTransform(progress, [0, 1], ['40vh', '80vh'])
    const rotateY = useTransform(progress, [0, 1], [0, 60])
 
    return (
-      <motion.div className='h-[200vh]'>
+      <motion.div className='h-[200vh] pt-20 lg:pt-44 px-6 mx-auto overflow-x-hidden relative'>
          <motion.div
-            style={{ height: heightSkewMd, rotateY }}
+            style={{ y, height: heightSkewMd, rotateY }}
             initial={{ top: -200, opacity: 0.5, scale: 1.25 }}
             animate={{ top: -160, opacity: 0.9, scale: 1.5 }}
             transition={{ ease: 'easeOut', duration: 1.75 }}
-            className='absolute -top-[160px] left-0 w-full h-full bg-[#56a5f7]/10 rounded-full blur-md'
+            className='absolute -top-[160px] left-0 w-full h-full bg-[hsl(214,100%,91%)] rounded-full blur-md'
          />
          {/* inner */}
          <motion.div
@@ -39,7 +40,7 @@ function Heading({ text, progress }) {
             initial={{ top: -200, opacity: 0.5, scale: 1.1 }}
             animate={{ top: -180, opacity: 1, scale: 1.25 }}
             transition={{ ease: 'easeOut', duration: 1.75 }}
-            className='absolute -top-[180px] left-0 w-full h-full bg-[#b8d5ff]/15 rounded-full blur-lg'
+            className='absolute -top-[180px] left-0 w-full h-full bg-[hsl(211,92%,97%)] rounded-full blur-xl'
          />
          <motion.h1 className='text-center text-[#97c6fe] text-6xl lg:text-9xl max-w-sm mx-auto'>
             {words.map((word, i) => {
