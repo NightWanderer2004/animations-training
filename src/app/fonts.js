@@ -1,8 +1,14 @@
-import { Yeseva_One } from 'next/font/google'
+import { Yeseva_One, DM_Serif_Display } from 'next/font/google'
 import localFont from 'next/font/local'
 
+export const dm_serif_display = DM_Serif_Display({
+   subsets: ['latin'],
+   style: ['normal', 'italic'],
+   weight: '400',
+})
+
 export const yeseva_one = Yeseva_One({
-   subsets: ['cyrillic'],
+   subsets: ['latin'],
    weight: '400',
 })
 

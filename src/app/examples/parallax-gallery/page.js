@@ -4,9 +4,9 @@ import { useRef } from 'react'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Image from 'next/image'
 import s from './style.module.scss'
-import B1 from '../../../public/img/b1.webp'
-import B2 from '../../../public/img/b2.webp'
-import B3 from '../../../public/img/b3.webp'
+import B1 from '../../../../public/img/b1.webp'
+import B2 from '../../../../public/img/b2.webp'
+import B3 from '../../../../public/img/b3.webp'
 
 export default function page() {
    const container = useRef(null)
