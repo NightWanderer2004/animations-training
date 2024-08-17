@@ -17,7 +17,7 @@ export function Heading({ text }) {
    const rotateY = useTransform(scrollYProgress, [0, 1], [0, 50])
 
    return (
-      <motion.div ref={container} className='absolute z-10 h-[200dvh] w-full pt-20 lg:pt-36 px-6 mx-auto overflow-x-hidden'>
+      <motion.div ref={container} className='absolute top-0 left-0 z-10 h-[200dvh] w-full pt-20 lg:pt-36 px-6 mx-auto overflow-x-hidden'>
          <motion.div
             style={{ y, height: heightSkewMd, rotateY }}
             initial={{ top: -200, opacity: 0.15, scale: 1.25 }}
