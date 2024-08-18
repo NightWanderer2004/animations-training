@@ -23,7 +23,7 @@ export function Heading({ text }) {
             initial={{ top: -200, opacity: 0.15, scale: 1.25 }}
             animate={{ top: isMobile ? -160 : -25, opacity: 0.9, scale: 1.5 }}
             transition={{ ease: 'backOut', duration: 1.75 }}
-            className='absolute left-0 w-full h-full bg-[hsl(214,100%,93%)] rounded-[100%] blur-md'
+            className='absolute z-10 left-0 w-full h-full bg-[hsl(214,100%,93%)] rounded-[100%] blur-md'
          />
          {/* inner */}
          <motion.div
@@ -31,9 +31,9 @@ export function Heading({ text }) {
             initial={{ top: -200, opacity: 0.15, scale: 1.1 }}
             animate={{ top: isMobile ? -170 : -25, opacity: 1, scale: 1.25 }}
             transition={{ ease: 'backOut', duration: 1.75 }}
-            className='absolute left-0 w-full h-full bg-[hsl(211,92%,97%)] rounded-[100%] blur-xl'
+            className='absolute z-20 left-0 w-full h-full bg-[hsl(211,92%,97%)] rounded-[100%] blur-xl'
          />
-         <motion.h1 className='text-center text-[#97c6fe] text-6xl lg:text-9xl max-w-sm lg:max-w-2xl mx-auto'>
+         <motion.h1 className='text-center text-[#97c6fe] text-6xl lg:text-9xl max-w-sm lg:max-w-2xl mx-auto relative z-30'>
             {words.map((word, i) => {
                const wordPos = i / words.length
                return (
@@ -52,7 +52,7 @@ function Word({ children, wordPos }) {
 
    return (
       <motion.span
-         className={`inline-block mr-3 mb-0.5 ${isTitle ? 'italic' : ''}`}
+         className={`inline-block relative z-30 mr-3 mb-0.5 ${isTitle ? 'italic' : ''}`}
          initial={{ y: isTitle ? 30 : 25, filter: 'blur(15px)', opacity: 0 }}
          animate={{ y: 0, filter: 'blur(0px)', opacity: 1 }}
          transition={{ duration: isTitle ? 0.9 : 0.8, ease: 'backOut', delay: wordPos * 0.45 }}
