@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { useTransform, useScroll, motion } from 'framer-motion'
 import { e_ukraine, yeseva_one } from '../../fonts'
+import PageWrapper from '@/app/components/PageWrapper'
 
-const projects = [
+const collection = [
    {
       title: 'Planet with rings',
       description: 'A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity.',
@@ -34,17 +35,19 @@ export default function page() {
    })
 
    return (
-      <div ref={container}>
-         {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.02
-            return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * 0.25, 1]} targetScale={targetScale} />
-         })}
-      </div>
+      <PageWrapper>
+         <div ref={container}>
+            {collection.map((project, i) => {
+               const targetScale = 1 - (collection.length - i) * 0.02
+               return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * 0.25, 1]} targetScale={targetScale} />
+            })}
+         </div>
+      </PageWrapper>
    )
 }
 
 function Card({ title, description, src, color, i, progress, range, targetScale }) {
-   const isLast = i === projects.length - 1
+   const isLast = i === collection.length - 1
    const container = useRef(null)
    const { scrollYProgress } = useScroll({
       target: container,

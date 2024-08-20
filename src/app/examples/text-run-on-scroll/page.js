@@ -1,9 +1,14 @@
 'use client'
+import PageWrapper from '@/app/components/PageWrapper'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
 export default function page() {
-   return <Paragraph paragraph='Welcome to the journey of becoming an web animation sensei' />
+   return (
+      <PageWrapper>
+         <Paragraph paragraph='Welcome to the journey of becoming an web animation master' />
+      </PageWrapper>
+   )
 }
 
 function Paragraph({ paragraph }) {
@@ -15,7 +20,7 @@ function Paragraph({ paragraph }) {
 
    const words = paragraph.split(' ')
    return (
-      <p ref={container} className='flex text-[6.5vw] text-stone-900 p-10 flex-wrap'>
+      <p ref={container} className='flex flex-wrap px-5 text-5xl lg:text-[120px] font-medium text-stone-900'>
          {words.map((word, i) => {
             const elemPos = i === words.length - 1 ? 1 : 1.5
             const start = i / words.length
@@ -32,10 +37,10 @@ function Paragraph({ paragraph }) {
 
 function Word({ children, progress, range }) {
    const opacity = useTransform(progress, range, [0, 1])
-   const italicWords = ['becoming', 'sensei']
+   const italicWords = ['becoming', 'master']
 
    return (
-      <span className='relative mr-[2.045vw] leading-snug'>
+      <span className='relative mr-[2.045vw] leading-[1.2]'>
          <span
             className='absolute opacity-10'
             style={{

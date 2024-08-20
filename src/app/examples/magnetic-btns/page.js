@@ -1,14 +1,17 @@
 'use client'
 import { useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import PageWrapper from '@/app/components/PageWrapper'
 
 export default function page() {
    return (
-      <div className='grid grid-cols-2 grid-rows-2 lg:flex gap-3 lg:gap-6 -mt-[500px] max-w-fit mx-auto rounded-2xl py-5 px-6 border border-black/10 lg:scale-150'>
-         <MagneticBtn className='col-span-1 lg:col-span-1'>Open</MagneticBtn>
-         <MagneticBtn className='col-span-1 lg:col-span-1'>Share link ↗</MagneticBtn>
-         <MagneticBtn className='col-span-2 lg:col-span-1'>← Back</MagneticBtn>
-      </div>
+      <PageWrapper>
+         <div className='grid grid-cols-2 grid-rows-2 lg:flex gap-3 lg:gap-6 -mt-[500px] max-w-fit mx-auto rounded-2xl py-5 px-6 border border-black/10 lg:scale-150'>
+            <MagneticBtn className='col-span-1 lg:col-span-1'>Open</MagneticBtn>
+            <MagneticBtn className='col-span-1 lg:col-span-1'>Share link ↗</MagneticBtn>
+            <MagneticBtn className='col-span-2 lg:col-span-1'>← Back</MagneticBtn>
+         </div>
+      </PageWrapper>
    )
 }
 

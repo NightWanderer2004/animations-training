@@ -1,4 +1,5 @@
 'use client'
+import PageWrapper from '@/app/components/PageWrapper'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -10,10 +11,12 @@ export default function page() {
    })
 
    return (
-      <div ref={container}>
-         <Slide bg='#3b82f6' left={'-40%'} direction='left' progress={scrollYProgress} />
-         <Slide bg='#60a5fa' left={'-75%'} direction='right' progress={scrollYProgress} />
-      </div>
+      <PageWrapper>
+         <div ref={container} className='overflow-x-hidden'>
+            <Slide bg='#3b82f6' left={'-40%'} direction='left' progress={scrollYProgress} />
+            <Slide bg='#60a5fa' left={'-75%'} direction='right' progress={scrollYProgress} />
+         </div>
+      </PageWrapper>
    )
 }
 
