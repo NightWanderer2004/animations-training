@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { useRef } from 'react'
+import { dm_serif_display, e_ukraine } from '../fonts'
 
 export function Heading({ text }) {
    const container = useRef(null)
@@ -46,6 +47,15 @@ export function Heading({ text }) {
                )
             })}
          </motion.h1>
+         <motion.p
+            initial={{ y: 15, filter: 'blur(10px)', opacity: 0 }}
+            animate={{ y: 0, filter: 'blur(0px)', opacity: 0.8 }}
+            transition={{ duration: 0.8, ease: 'backOut', delay: 0.45 }}
+            className={`text-center text-xs lg:text-base max-w-[250px] lg:max-w-full ${e_ukraine.className} text-[hsl(213,70%,75%)] mx-auto relative z-30 mt-3.5 lg:mt-8`}
+         >
+            A beautyful <span className={`italic ${dm_serif_display.className} text-lg lg:text-2xl`}>spot</span>, where I show my{' '}
+            <span className={`italic ${dm_serif_display.className} text-lg lg:text-2xl`}>Framer</span> experiments
+         </motion.p>
       </motion.div>
    )
 }

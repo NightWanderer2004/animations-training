@@ -1,7 +1,7 @@
 .container {
    @apply absolute lg:overflow-x-hidden w-full h-full min-h-[200dvh];
    .wrapper {
-      @apply absolute p-3 pb-10 bg-neutral-50 rounded-xl drop-shadow-[0_4px_6px_rgba(0,0,0,0.10)];
+      @apply absolute p-3 pb-10 bg-neutral-50 rounded-xl /*drop-shadow-[0_4px_6px_rgba(0,0,0,0.10)]*/;
       img {
          @apply rounded-lg pointer-events-none;
       }
