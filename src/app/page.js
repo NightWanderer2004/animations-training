@@ -9,7 +9,7 @@ export default function Home() {
    const container = useRef(null)
 
    return (
-      <div className={`relative m-2 lg:m-4 ${dm_serif_display.className}`}>
+      <div className={`relative m-1 lg:m-4 ${dm_serif_display.className}`}>
          <Heading text='Welcome to Ani-Magic' />
          <div
             ref={container}
