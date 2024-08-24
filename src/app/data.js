@@ -4,6 +4,7 @@ export const links = [
    { category: 'scroll', link: 'cards-parallax' },
    { category: 'interaction', link: 'magnetic-btns' },
    { category: 'scroll', link: 'parallax-gallery' },
+   { category: 'interaction', link: '3d-text' },
 ].reverse()
 
 export const pageVariants = {
