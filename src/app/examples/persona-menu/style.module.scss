@@ -1,0 +1,40 @@
+.container {
+   @apply h-screen w-screen flex my-[-85vh] px-12 overflow-hidden from-transparent from-50% to-50% to-blue-200 bg-gradient-to-r;
+}
+.body,
+.backdrop {
+   transform: perspective(500px) rotateY(-35deg) rotate(-14deg);
+   transform-style: preserve-3d;
+}
+.backdrop {
+   @apply absolute top-0 -left-[10vw] lg:left-0 w-screen lg:w-[55vw] h-screen bg-blue-400 rounded-l-[100%] pointer-events-none;
+}
+
+.body {
+   @apply flex flex-col justify-center items-end lg:-space-y-8 pl-[5vw] lg:pl-[12vw];
+}
+
+.textContainer {
+   @apply relative z-10 w-fit cursor-pointer transition-transform duration-[0.4s];
+   transform-style: preserve-3d;
+   &:hover {
+      transform: rotateX(90deg) translateY(-6vw);
+   }
+
+   p {
+      @apply text-[20vw] lg:text-9xl leading-[20vw] lg:leading-tight block text-blue-200 transition-all duration-[0.4s];
+   }
+   .secondary {
+      @apply absolute top-0 text-blue-600 opacity-0 origin-bottom;
+      transform: rotateX(-90deg) translateY(13vw);
+      @media (min-width: 640px) {
+         transform: rotateX(-90deg) translateY(5vw);
+      }
+   }
+   &:hover .primary {
+      @apply opacity-0 -translate-y-full;
+   }
+   &:hover .secondary {
+      @apply opacity-100;
+   }
+}

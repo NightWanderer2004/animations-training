@@ -10,19 +10,20 @@ export default function page() {
    return (
       <PageWrapper>
          <div className={`${s.container} ${dm_serif_display.className}`}>
+            <div className={s.backdrop}></div>
             <div ref={plane} className={s.body}>
-               <Text3d primary={'Beautiful'} secondary={'Beautiful'} />
-               <Text3d primary={'space'} secondary={'space'} />
-               <Text3d primary={'to create'} secondary={'to create'} />
+               <Text3d rotation={8} primary={'Persona'} secondary={'Persona'} />
+               <Text3d rotation={0} primary={'Stats'} secondary={'Stats'} />
+               <Text3d rotation={-8} primary={'System'} secondary={'System'} />
             </div>
          </div>
       </PageWrapper>
    )
 }
 
-function Text3d({ primary, secondary }) {
+function Text3d({ rotation, primary, secondary }) {
    return (
-      <div className={s.textContainer}>
+      <div style={{ rotate: `${rotation}deg` }} className={s.textContainer}>
          <p className={s.primary}>{primary}</p>
          <p className={s.secondary}>{secondary}</p>
       </div>

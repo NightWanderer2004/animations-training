@@ -12,7 +12,6 @@ export default function ExamplesLayout({ children }) {
       const selectedValue = event.target.value
       setSelectedLink(selectedValue)
       router.push(selectedValue)
-      window.scrollTo({ top: 0 })
    }
 
    return (
