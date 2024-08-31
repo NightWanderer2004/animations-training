@@ -12,7 +12,7 @@ export default function Example({ containerRef, delay, title, link, category }) 
          initial={{ opacity: 0, y: 20, scale: 0.98 }}
          whileInView={{ opacity: 1, y: 0, scale: 1 }}
          whileTap={{ scale: 0.98, transition: { delay: 0 } }}
-         viewport={{ once: isMobile ? true : false, root: containerRef, margin: `0px 0px ${isMobile ? -160 : -200}px 0px` }}
+         viewport={{ once: true, root: containerRef, margin: `0px 0px ${isMobile ? -160 : -200}px 0px` }}
          transition={{ duration: 0.9, delay: 0.3 + delay, ease: 'backOut' }}
          className={`w-full h-[430px] lg:h-[320px] cursor-pointer ${e_ukraine.className}`}
       >

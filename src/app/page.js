@@ -4,6 +4,13 @@ import { Heading } from './components/Heading'
 import Example from './components/Example'
 import { links } from './data'
 import { useRef } from 'react'
+import mixpanel from 'mixpanel-browser'
+
+mixpanel.init('3396237', {
+   debug: true,
+   track_pageview: true,
+   persistence: 'localStorage',
+})
 
 export default function Home() {
    const container = useRef(null)
@@ -13,7 +20,7 @@ export default function Home() {
          <Heading text='Welcome to Ani-Magic' />
          <div
             ref={container}
-            className='relative z-20 container max-w-6xl mx-auto px-2 lg:px-0 pt-[70vh] pb-20 lg:pt-[90vh] grid lg:grid-cols-3 gap-20 lg:gap-x-6 gap-y-[74px]'
+            className='relative z-20 container max-w-6xl mx-auto px-2 lg:px-0 pt-[70vh] pb-20 lg:pt-[90vh] grid lg:grid-cols-3 gap-20 lg:gap-x-6 gap-y-20'
          >
             {links.map((el, i) => {
                const delay = i * 0.075

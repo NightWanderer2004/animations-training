@@ -7,6 +7,7 @@ export default function ExamplesLayout({ children }) {
    const router = useRouter()
    const pathname = usePathname()
    const [selectedLink, setSelectedLink] = useState(pathname.split('/').pop())
+   const currentExampleLink = links.find(el => el.link === selectedLink)
 
    const handleSelectChange = event => {
       const selectedValue = event.target.value
@@ -16,15 +17,23 @@ export default function ExamplesLayout({ children }) {
 
    return (
       <>
-         <nav className='fixed top-2 left-2 z-20 flex gap-2'>
-            <a
-               href='/'
-               className='bg-white/40 border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
-            >
-               ← back
-            </a>
+         <nav className='fixed top-2 left-2 z-20 flex flex-col items-center gap-1'>
+            <div className='flex gap-1 w-full'>
+               <a
+                  href='/'
+                  className='bg-white/40 text-center w-full border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
+               >
+                  ← back
+               </a>
+               <a
+                  href={`https://github.com/NightWanderer2004/animations-training/blob/main/src/app/examples/${currentExampleLink.link}/page.js`}
+                  className='bg-white/40 text-center w-full  border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
+               >
+                  code
+               </a>
+            </div>
             <select
-               className='bg-white/40 border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
+               className='bg-white/40 border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm max-w-[170px]'
                onChange={handleSelectChange}
                value={selectedLink}
             >
