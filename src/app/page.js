@@ -6,7 +6,7 @@ import { links } from './data'
 import { useRef } from 'react'
 import mixpanel from 'mixpanel-browser'
 
-mixpanel.init('3396237', {
+mixpanel.init(process.env.MIXPANEL_TOKEN, {
    debug: true,
    track_pageview: true,
    persistence: 'localStorage',
@@ -14,7 +14,7 @@ mixpanel.init('3396237', {
 
 export default function Home() {
    const container = useRef(null)
-
+   console.log(process.env.MIXPANEL_TOKEN)
    return (
       <div className={`relative m-1 lg:m-4 ${dm_serif_display.className}`}>
          <Heading text='Welcome to Ani-Magic' />

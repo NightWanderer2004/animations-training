@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+   env: {
+      MIXPANEL_TOKEN: process.env.MIXPANEL_TOKEN,
+   },
    images: {
       remotePatterns: [
          {
