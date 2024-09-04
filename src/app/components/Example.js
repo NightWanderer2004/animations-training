@@ -20,8 +20,7 @@ export default function Example({ containerRef, delay, title, link, category }) 
             <div className='absolute top-0 left-0 block w-full h-full bg-blue-50 rounded-lg' />
             <Image
                src={`/thumbnails/${link}.png`}
-               width={300}
-               height={200}
+               layout='fill'
                alt={title}
                className='relative z-10 p-1 h-full w-full rounded-xl object-cover pointer-events-none'
             />

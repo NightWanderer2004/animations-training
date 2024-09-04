@@ -5,6 +5,7 @@ export const links = [
    { category: 'interaction', link: 'magnetic-btns' },
    { category: 'scroll', link: 'parallax-gallery' },
    { category: 'interaction', link: 'persona-menu' },
+   { category: 'visual', link: 'animated-count' },
 ].reverse()
 
 export const pageVariants = {

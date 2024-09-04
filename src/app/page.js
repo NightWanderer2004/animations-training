@@ -3,18 +3,17 @@ import { dm_serif_display } from './fonts'
 import { Heading } from './components/Heading'
 import Example from './components/Example'
 import { links } from './data'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import mixpanel from 'mixpanel-browser'
 
-mixpanel.init(process.env.MIXPANEL_TOKEN, {
-   debug: true,
-   track_pageview: true,
-   persistence: 'localStorage',
-})
-
 export default function Home() {
+   useEffect(() => {
+      mixpanel.track('Page View', {
+         'Page Type': 'Home Page',
+      })
+   }, [])
    const container = useRef(null)
-   console.log(process.env.MIXPANEL_TOKEN)
+
    return (
       <div className={`relative m-1 lg:m-4 ${dm_serif_display.className}`}>
          <Heading text='Welcome to Ani-Magic' />
