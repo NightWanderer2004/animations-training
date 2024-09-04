@@ -12,6 +12,7 @@ export default function page() {
    return (
       <PageWrapper>
          <div className={s.body}>
+            <p className='text-xl font-normal text-neutral-300 absolute top-[58vh]'>click me</p>
             <AnimatedCounter clickHandler={() => setCount(Math.random() * 100)} value={count} />
          </div>
       </PageWrapper>
