@@ -44,9 +44,9 @@ export default function ExamplesLayout({ children }) {
                ))}
             </select>
          </nav>
-         <div className='h-[85vh]' />
+         <div className='h-[85vh] pointer-events-none' />
          {children}
-         <div className='h-[85vh]' />
+         <div className='h-[85vh] pointer-events-none' />
       </>
    )
 }
