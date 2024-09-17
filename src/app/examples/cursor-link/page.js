@@ -40,7 +40,7 @@ export default function page() {
             >
                Discover 🌿
             </Cursor>
-            <div ref={targetRef}>
+            <motion.div ref={targetRef} whileHover={{ scale: 1.01 }} transition={{ transition: { ease: 'easeOut', duration: 0.6 } }}>
                <Image
                   className='rounded-xl drop-shadow-md'
                   src={Img}
@@ -50,7 +50,7 @@ export default function page() {
                   width={350}
                   height={500}
                />
-            </div>
+            </motion.div>
          </div>
       </PageWrapper>
    )
