@@ -1,12 +1,15 @@
 'use client'
 import './globals.css'
+import 'lenis/dist/lenis.css'
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 import mixpanel from 'mixpanel-browser'
 
 export default function RootLayout({ children }) {
    useEffect(() => {
-      const lenis = new Lenis()
+      const lenis = new Lenis({
+         lerp: 0.075,
+      })
 
       function raf(time) {
          lenis.raf(time)

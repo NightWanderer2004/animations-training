@@ -36,7 +36,7 @@ export default function page() {
 
    return (
       <PageWrapper>
-         <div ref={container}>
+         <div ref={container} className='mt-[-180px]'>
             {collection.map((project, i) => {
                const targetScale = 1 - (collection.length - i) * 0.02
                return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * 0.25, 1]} targetScale={targetScale} />
@@ -57,7 +57,11 @@ function Card({ title, description, src, color, i, progress, range, targetScale 
    const scale = useTransform(progress, range, [1, targetScale])
    const rotationX = useTransform(scrollYProgress, [0, 1], [-80, isLast ? 0 : 90])
    const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0.5])
-   const filter = useTransform(scrollYProgress, [0, 0.3], ['brightness(0.75)', 'brightness(1)'])
+   const filter = useTransform(
+      scrollYProgress,
+      [0, 0.3, 1],
+      ['brightness(0.75) blur(1px)', 'brightness(1) blur(0px)', `brightness(${isLast ? 1 : 0.9})`]
+   )
 
    return (
       <div
@@ -65,10 +69,10 @@ function Card({ title, description, src, color, i, progress, range, targetScale 
          className={`h-[28vh] text-white flex justify-center items-center sticky top-0 drop-shadow-[0_4px_6px_rgba(0,0,0,0.10)] ${yeseva_one.className}`}
       >
          <motion.div
-            className='border-4 border-black/5 shadow-inner shadow-white/20 flex flex-col md:h-[600px] w-screen p-8 md:p-10 relative rounded-3xl origin-bottom'
+            className='border-4 border-black/5 shadow-inner shadow-white/20 flex flex-col md:h-[670px] w-[75vw] p-8 md:p-10 relative rounded-3xl origin-bottom'
             style={{
                backgroundColor: color,
-               top: '-5vh',
+               top: '-3vh',
                scale,
                rotateX: rotationX,
                opacity: isLast ? 1 : opacity,

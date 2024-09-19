@@ -41,7 +41,7 @@ export default function page() {
                className={s.wrapper}
                style={{
                   top: isMobile ? '710px' : '610px',
-                  right: isMobile ? '30px' : '5px',
+                  left: isMobile ? '30px' : '65%',
                   y: moveLgY,
                   x: moveRightX,
                   rotate: rotateRight,

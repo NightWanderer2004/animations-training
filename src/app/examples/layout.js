@@ -21,19 +21,19 @@ export default function ExamplesLayout({ children }) {
             <div className='flex gap-1 w-full'>
                <a
                   href='/'
-                  className='bg-white/40 text-center w-full border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
+                  className='bg-white/60 text-center w-full border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
                >
                   ← back
                </a>
                <a
                   href={`https://github.com/NightWanderer2004/animations-training/blob/main/src/app/examples/${currentExampleLink.link}/page.js`}
-                  className='bg-white/40 text-center w-full  border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
+                  className='bg-white/60 text-center w-full  border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm'
                >
                   code
                </a>
             </div>
             <select
-               className='bg-white/40 border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm max-w-[170px]'
+               className='bg-white/60 border border-white/20 backdrop-blur-md p-1 px-2 rounded-xl shadow-inner shadow-white/40 drop-shadow-sm max-w-[170px]'
                onChange={handleSelectChange}
                value={selectedLink}
             >
